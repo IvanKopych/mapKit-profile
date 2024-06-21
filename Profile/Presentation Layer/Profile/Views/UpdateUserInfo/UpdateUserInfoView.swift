@@ -57,6 +57,7 @@ struct UpdateUserInfoView: View {
                     )
                     .padding()
                     .onReceive(Just(viewModel.name)) { _ in limitText(nameLenghtLimit) }
+                    
             }
             
             VStack(alignment: .leading, spacing: .zero) {

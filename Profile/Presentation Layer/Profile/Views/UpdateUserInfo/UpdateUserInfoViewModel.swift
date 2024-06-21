@@ -26,6 +26,7 @@ final class UpdateUserInfoViewModel: ObservableObject {
         self.onSave = onSave
         
         setupSubscribers()
+        UITextField.appearance().clearButtonMode = .whileEditing
     }
     
     // MARK: - Methods(private)
