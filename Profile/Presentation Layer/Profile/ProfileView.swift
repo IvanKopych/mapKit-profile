@@ -19,9 +19,9 @@ struct ProfileView: View {
                     .task {
                         await viewModel.fetchCountries()
                     }
-                .ignoresSafeArea(.all, edges: .all)
-                .frame(height: (reader.size.height / 2) + offset)
-            
+                    .ignoresSafeArea(.all, edges: .all)
+                    .frame(height: (reader.size.height / 2) + offset)
+                
                 VStack {
                     info
                         .frame(height: (reader.size.height / 2) - offset)

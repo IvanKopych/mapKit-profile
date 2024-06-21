@@ -13,7 +13,7 @@ import Combine
 final class ProfileViewModel: ObservableObject {
     
     // MARK: - Published
-
+    
     @MainActor @Published var countries: [Country] = []
     @Published var selectVisitedCountries: Bool = false
     @Published var selectVisitInFutureCountries: Bool = false
@@ -86,7 +86,7 @@ final class ProfileViewModel: ObservableObject {
         userInfoViewModel.calculateNumberOfVisitedCountries(for: countries)
         userInfoViewModel.calculatePercentageOfVisitedCountries(for: countries)
     }
-
+    
     private func getCountryFlag(_ country: String) -> String {
         country
             .unicodeScalars
