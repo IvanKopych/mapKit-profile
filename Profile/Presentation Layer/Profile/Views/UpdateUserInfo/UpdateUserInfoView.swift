@@ -29,10 +29,17 @@ struct UpdateUserInfoView: View {
             }
             .padding()
             
-            avatar
-                .onTapGesture {
-                    viewModel.showPhotoPicker.toggle()
-                }
+            ZStack(alignment: .bottomTrailing) {
+                avatar
+                    
+                Image(systemName: "highlighter")
+                    .resizable()
+                    .frame(width: 25, height: 25)
+                    .foregroundStyle(.black)
+            }
+            . onTapGesture {
+                viewModel.showPhotoPicker.toggle()
+        }
             
             VStack(alignment: .leading, spacing: .zero) {
                 Text("Your name")

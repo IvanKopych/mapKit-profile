@@ -64,10 +64,14 @@ struct ProfileView: View {
             }
         }
         .sheet(isPresented: $viewModel.selectVisitedCountries, content: {
-            CountriesSelectionView(type: .visited, countries: $viewModel.countries)
+            CountriesSelectionView(type: .visited, countries: $viewModel.countries, onDone: {
+                viewModel.selectVisitedCountries.toggle()
+            })
         })
         .sheet(isPresented: $viewModel.selectVisitInFutureCountries, content: {
-            CountriesSelectionView(type: .visitInFuture, countries: $viewModel.countries)
+            CountriesSelectionView(type: .visitInFuture, countries: $viewModel.countries, onDone: {
+                viewModel.selectVisitInFutureCountries.toggle()
+            })
         })
         .sheet(isPresented: $viewModel.showUpdateUserInfo, content: {
             UpdateUserInfoView(viewModel: viewModel.updateUserInfoViewModel)
@@ -79,7 +83,6 @@ struct ProfileView: View {
             VStack {
                 UserInfoView(viewModel: viewModel.userInfoViewModel)
                     .offset(y: -20)
-                
             }
             .background(.white)
             

@@ -13,13 +13,20 @@ struct CountriesSelectionView: View {
     @Binding var countries: [Country]
     @State var text: String = ""
     
+    var onDone: () -> Void
+    
     var body: some View {
         VStack {
-            Capsule()
-                .fill(Color.gray.opacity(0.5))
-                .frame(width: 50, height: 5)
-                .padding(.top)
-                .padding(.bottom, 5)
+            HStack {
+                Spacer()
+                Button {
+                    onDone()
+                } label: {
+                    Text("Done")
+                        .font(.system(size: 17).bold())
+                }
+            }
+            .padding()
             
             HStack(spacing: 15) {
                 Image(systemName: "magnifyingglass")
@@ -110,5 +117,5 @@ struct CountriesSelectionView: View {
 }
 
 #Preview {
-    CountriesSelectionView(type: .visitInFuture, countries: .constant([]))
+    CountriesSelectionView(type: .visitInFuture, countries: .constant([]), onDone: {})
 }
