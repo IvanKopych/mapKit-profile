@@ -169,7 +169,6 @@ final class ProfileViewModel: ObservableObject {
         let countries = Locale.Region.isoRegions.filter { $0.subRegions.isEmpty }.map { $0.identifier }.sorted()
             .compactMap {
                 Country(
-                    id: $0,
                     name: countryName(from: $0),
                     flag: getCountryFlag($0))
             }

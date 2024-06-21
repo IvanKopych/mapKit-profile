@@ -8,12 +8,12 @@
 import Foundation
 import MapKit
 
-struct Country: Identifiable, Equatable {
-    static func == (lhs: Country, rhs: Country) -> Bool {
-        lhs.id == rhs.id
-    }
+struct Country: Identifiable{
+//    static func == (lhs: Country, rhs: Country) -> Bool {
+//        lhs.id == rhs.id
+//    }
     
-    var id: String
+    var id: String = UUID().uuidString
     var name: String
     var flag: String = "+"
     var coordinate: CLLocationCoordinate2D?

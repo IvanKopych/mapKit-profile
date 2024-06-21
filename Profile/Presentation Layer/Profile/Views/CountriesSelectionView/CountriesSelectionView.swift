@@ -67,11 +67,9 @@ struct CountriesSelectionView: View {
     }
     
     private func countryItem(_ country: Country) -> some View {
-        let searchedCountries = text.isEmpty ? countries : countries.filter({ $0.name.lowercased().contains(text.lowercased())})
-        
-        
-        return VStack {
-            if searchedCountries.contains(country) {
+        VStack {
+            if (text.isEmpty ? countries : countries.filter({ $0.name.lowercased().contains(text.lowercased())})).firstIndex(where: { $0.id == country.id }) != nil {
+                
                 HStack {
                     Text(country.flag)
                     Text(country.name)
